@@ -1,3 +1,3 @@
 # Client Based Blazor Tutorial
 
-Pluralsight'tan aldığım _Blazor:Getting Started_ eğitimini çalıştığım Repo.
+Pluralsight'tan aldığım _[Blazor:Getting Started](https://app.pluralsight.com/library/courses/getting-started-blazor/table-of-contents)_ eğitimini çalıştığım Repo.
