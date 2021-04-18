@@ -1,0 +1,43 @@
+﻿@page "/employeedetail/{SearchingID}"
+
+<h1 class="page-title">@CurrentEmployee.LastName, @CurrentEmployee.FirstName</h1>
+
+
+<div class="col-10 row">
+    <div class="col-xs-12 col-sm-8">
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">ID</label>
+            <div class="col-sm-8">
+                <label type="text" class="form-control-plaintext">@CurrentEmployee.EmployeeId</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Birthdate</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@CurrentEmployee.BirthDate.ToShortDateString()</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Joined us</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@CurrentEmployee.JoinedDate?.ToShortDateString()</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Left us</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@CurrentEmployee.ExitDate?.ToShortDateString()</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Email</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@CurrentEmployee.Email</label>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -26,10 +26,10 @@ namespace BuraksRecordShopHRM.App.Pages
 
         public static IEnumerable<Employee> LoadEmployees() => new List<Employee>
             {
-                new Employee{ EmployeeId=1,FirstName="Junger",LastName="Klöp", BirthDate=new DateTime(1967,4,12), CountryId=1, JobCategoryId=1},
-                new Employee{ EmployeeId=2,FirstName="Aleksa",LastName="Bröger", BirthDate=new DateTime(1974,1,11), CountryId=1, JobCategoryId=3},
-                new Employee{ EmployeeId=3,FirstName="Burak",LastName="Selim", BirthDate=new DateTime(1976,4,12), CountryId=3, JobCategoryId=2},
-                new Employee{ EmployeeId=4,FirstName="Camelia Oscar De La",LastName="Fuante Garcia Velazques", BirthDate=new DateTime(1985,3,8), CountryId=5, JobCategoryId=4}
+                new Employee{ EmployeeId=1,FirstName="Junger",LastName="Klöp", BirthDate=new DateTime(1967,4,12), JoinedDate=new DateTime(1990,1,8),Email="junger.clup@buraksrecords.com", CountryId=1, JobCategoryId=1},
+                new Employee{ EmployeeId=2,FirstName="Aleksa",LastName="Bröger", BirthDate=new DateTime(1974,1,11),JoinedDate=new DateTime(2000,1,8),Email="aleksa.broger@buraksrecords.com", CountryId=1, JobCategoryId=3},
+                new Employee{ EmployeeId=3,FirstName="Burak",LastName="Selim", BirthDate=new DateTime(1976,4,12),JoinedDate=new DateTime(2001,12,10),Email="burak.selim@buraksrecords.com", CountryId=3, JobCategoryId=2},
+                new Employee{ EmployeeId=4,FirstName="Camelia Oscar De La",LastName="Fuante Garcia Velazques", BirthDate=new DateTime(1985,3,8),JoinedDate=new DateTime(2010,9,9),Email="camelia.veazques@buraksrecords.com", CountryId=5, JobCategoryId=4}
             };
     }
 }

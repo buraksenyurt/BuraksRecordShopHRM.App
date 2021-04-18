@@ -24,7 +24,11 @@ else
                     <td>Photo</td>
                     <td>@e.EmployeeId</td>
                     <td><b>@e.LastName</b>, @e.FirstName</td>
-                    <td>Detail Link</td>
+                    <td>
+                        <a href="@($"employeedetail/{e.EmployeeId}")" class="btn btn-primary table-btn">
+                            more...
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>
