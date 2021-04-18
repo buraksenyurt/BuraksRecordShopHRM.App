@@ -15,5 +15,7 @@ namespace BuraksRecordShopHRM.Shared
         public Country Country { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public DateTime? JoinedDate { get; set; }
+        public DateTime? ExitDate { get; set; }
     }
 }
