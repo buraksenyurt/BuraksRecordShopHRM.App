@@ -1,0 +1,32 @@
+﻿@page "/employeeoverview"
+
+<h1 class="page-title">All Our Lovely Employees</h1>
+
+@if (Employees == null)
+{
+    <p><em>Please be patient. Data is being loaded...Tik tak tik tak...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var e in Employees)
+            {
+                <tr>
+                    <td>Photo</td>
+                    <td>@e.EmployeeId</td>
+                    <td><b>@e.LastName</b>, @e.FirstName</td>
+                    <td>Detail Link</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
