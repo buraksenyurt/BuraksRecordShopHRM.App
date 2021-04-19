@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BuraksRecordShopHRM.Api.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.Api.Controllers
 {
@@ -11,5 +7,25 @@ namespace BuraksRecordShopHRM.Api.Controllers
     [ApiController]
     public class CountryController : ControllerBase
     {
+        private readonly ICountryRepository _countryRepository;
+
+        public CountryController(ICountryRepository countryRepository)
+        {
+            _countryRepository = countryRepository;
+        }
+
+        // GET: api/<controller>
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(_countryRepository.GetAllCountries());
+        }
+
+        // GET api/<controller>/5
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            return Ok(_countryRepository.GetById(id));
+        }
     }
 }

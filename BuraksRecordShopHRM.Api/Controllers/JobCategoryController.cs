@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BuraksRecordShopHRM.Api.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.Api.Controllers
 {
@@ -11,5 +7,24 @@ namespace BuraksRecordShopHRM.Api.Controllers
     [ApiController]
     public class JobCategoryController : ControllerBase
     {
+        private readonly IJobCategoryRepository _jobCategoryRepository;
+        public JobCategoryController(IJobCategoryRepository jobCategoryRepository)
+        {
+            _jobCategoryRepository = jobCategoryRepository;
+        }
+
+        // GET: api/<controller>
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(_jobCategoryRepository.GetAll());
+        }
+
+        // GET api/<controller>/5
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            return Ok(_jobCategoryRepository.GetById(id));
+        }
     }
 }
