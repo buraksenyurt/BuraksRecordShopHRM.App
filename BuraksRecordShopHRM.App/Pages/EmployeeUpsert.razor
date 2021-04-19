@@ -1,0 +1,34 @@
+﻿@page "/employeeupsert"
+@page "/employeeupsert/{employeeId}"
+
+<section>
+    <h1 class="card-title">
+        @Employee.LastName, @Employee.FirstName
+    </h1>
+    <EditForm Model="@Employee">
+        <div class="form-group row">
+            <label for="lastName" class="col-sm-3">Last Name: </label>
+            <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
+        </div>
+        <div class="form-group row">
+            <label for="firstName" class="col-sm-3">First Name: </label>
+            <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@Employee.FirstName" placeholder="Enter first name"></InputText>
+        </div>
+        <div class="form-group row">
+            <label for="birthDate" class="col-sm-3">Birthdate: </label>
+            <InputDate id="birthDate" class="form-control col-sm-8" @bind-Value="@Employee.BirthDate" placeholder="Enter birthdate"></InputDate>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-sm-3">Email: </label>
+            <InputText id="email" class="form-control col-sm-8" @bind-Value="@Employee.Email" placeholder="Enter email"></InputText>
+        </div>
+        <div class="form-group row">
+            <label for="joineddate" class="col-sm-3">Joined on. Hurayy!!! :) </label>
+            <InputDate id="joineddate" class="form-control col-sm-8" @bind-Value="@Employee.JoinedDate" placeholder="Enter date joined"></InputDate>
+        </div>
+        <div class="form-group row">
+            <label for="exitdate" class="col-sm-3">Left on :( </label>
+            <InputDate id="exitdate" class="form-control col-sm-8" @bind-Value="@Employee.ExitDate" placeholder="Enter exit date"></InputDate>
+        </div>
+    </EditForm>
+</section>
