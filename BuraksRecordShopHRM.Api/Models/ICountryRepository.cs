@@ -1,11 +1,11 @@
-﻿using System;
+﻿using BuraksRecordShopHRM.Shared;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.Api.Models
 {
-    interface ICountryRepository
+    public interface ICountryRepository
     {
+        IEnumerable<Country> GetAllCountries();
+        Country GetById(int countryId);
     }
 }

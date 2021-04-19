@@ -1,11 +1,14 @@
-﻿using System;
+﻿using BuraksRecordShopHRM.Shared;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.Api.Models
 {
-    interface IEmployeeRepository
+    public interface IEmployeeRepository
     {
+        IEnumerable<Employee> GetAll();
+        Employee GetById(int employeeId);
+        Employee Add(Employee employee);
+        Employee Update(Employee employee);
+        void Delete(int employeeId);
     }
 }

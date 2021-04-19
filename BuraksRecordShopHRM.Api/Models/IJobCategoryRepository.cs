@@ -1,11 +1,11 @@
-﻿using System;
+﻿using BuraksRecordShopHRM.Shared;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.Api.Models
 {
-    interface IJobCategoryRepository
+    public interface IJobCategoryRepository
     {
+        IEnumerable<JobCategory> GetAll();
+        JobCategory GetById(int jobCategoryId);
     }
 }
