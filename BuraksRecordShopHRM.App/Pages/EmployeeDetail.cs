@@ -1,7 +1,7 @@
-﻿using BuraksRecordShopHRM.Shared;
+﻿using BuraksRecordShopHRM.App.Services;
+using BuraksRecordShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.App.Pages
@@ -12,18 +12,22 @@ namespace BuraksRecordShopHRM.App.Pages
         public string SearchingID { get; set; }
         public Employee CurrentEmployee { get; set; } = new Employee();
 
-        public IEnumerable<Employee> Employees { get; set; }
-        public IEnumerable<Country> Countries { get; set; }
-        public IEnumerable<JobCategory> JobCategories { get; set; }
-        protected override Task OnInitializedAsync()
+        [Inject]
+        public IEmployeeDataService EmployeeDataService { get; set; }
+
+        //public IEnumerable<Employee> Employees { get; set; }
+        //public IEnumerable<Country> Countries { get; set; }
+        //public IEnumerable<JobCategory> JobCategories { get; set; }
+        protected async override Task OnInitializedAsync()
         {
-            Countries = DataLoader.LoadCountries();
-            JobCategories = DataLoader.LoadJobs();
-            Employees = DataLoader.LoadEmployees();
+            CurrentEmployee = await EmployeeDataService.GetDetail(Convert.ToInt32(SearchingID));
+            //Countries = DataLoader.LoadCountries();
+            //JobCategories = DataLoader.LoadJobs();
+            //Employees = DataLoader.LoadEmployees();
 
-            CurrentEmployee = Employees.FirstOrDefault(e => e.EmployeeId == int.Parse(SearchingID));
+            //CurrentEmployee = Employees.FirstOrDefault(e => e.EmployeeId == int.Parse(SearchingID));
 
-            return base.OnInitializedAsync();
+            //return base.OnInitializedAsync();
         }
     }
 }
