@@ -1,4 +1,4 @@
-# Blazor Çalışması
+# Blazor Çalışması (DEVAM EDİYOR)
 
 Pluralsight'tan aldığım _[Blazor:Getting Started](https://app.pluralsight.com/library/courses/getting-started-blazor/table-of-contents)_ eğitimini çalıştığım Repo.
 
@@ -20,8 +20,8 @@ Update-Database
 
 İşler yolunda gitti ve hem veritabanı oluştu 
 
-![screenshot_2.png](./assets/screenshot_2.png)
+![./assets/screenshot_2.png](./assets/screenshot_2.png)
 
 hem de API çalışır hale geldi.
 
-![screenshot_1.png](./assets/screenshot_1.png)
+![./assets/screenshot_1.png](./assets/screenshot_1.png)
