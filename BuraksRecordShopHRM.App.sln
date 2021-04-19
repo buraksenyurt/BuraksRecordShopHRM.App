@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuraksRecordShopHRM.App", "BuraksRecordShopHRM.App\BuraksRecordShopHRM.App.csproj", "{E75D6D5E-E3EB-416E-8364-A0091C9B4F43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuraksRecordShopHRM.Shared", "BuraksRecordShopHRM.Shared\BuraksRecordShopHRM.Shared.csproj", "{DF406614-5C3D-4993-84E4-DED5318844BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuraksRecordShopHRM.Shared", "BuraksRecordShopHRM.Shared\BuraksRecordShopHRM.Shared.csproj", "{DF406614-5C3D-4993-84E4-DED5318844BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuraksRecordShopHRM.Api", "BuraksRecordShopHRM.Api\BuraksRecordShopHRM.Api.csproj", "{EB18483A-EB37-424D-8698-79BDC24CD85C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuraksRecordShopHRM.Api", "BuraksRecordShopHRM.Api\BuraksRecordShopHRM.Api.csproj", "{EB18483A-EB37-424D-8698-79BDC24CD85C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
