@@ -20,8 +20,8 @@ Update-Database
 
 İşler yolunda gitti ve hem veritabanı oluştu 
 
-![./assets/screenshot_2.png](./assets/screenshot_2.png)
+![./assets/screenshot_2.png](./Assets/screenshot_2.png)
 
 hem de API çalışır hale geldi.
 
-![./assets/screenshot_1.png](./assets/screenshot_1.png)
+![./assets/screenshot_1.png](./Assets/screenshot_1.png)
