@@ -1,4 +1,4 @@
-using BuraksRecordShopHRM.Api.Models;
+﻿using BuraksRecordShopHRM.Api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +17,6 @@ namespace BuraksRecordShopHRM.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
@@ -26,6 +25,12 @@ namespace BuraksRecordShopHRM.Api
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<IJobCategoryRepository, JobCategoryRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+            // Blazor uygulamasının bu servise farklı adresten erişebilmesi için eklenen CORS tanımı
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
 
             services.AddControllers();
         }
@@ -43,6 +48,8 @@ namespace BuraksRecordShopHRM.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("Open"); // Open isimli CORS tanımını kullan
 
             app.UseEndpoints(endpoints =>
             {
