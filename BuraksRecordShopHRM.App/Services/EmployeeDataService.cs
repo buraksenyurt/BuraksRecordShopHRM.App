@@ -35,9 +35,9 @@ namespace BuraksRecordShopHRM.App.Services
             return null;
         }
 
-        public async Task Delete(int employeeId)
+        public async Task Delete(int id)
         {
-            await _httpClient.DeleteAsync($"api/employee/{employeeId}");
+            await _httpClient.DeleteAsync($"api/employee/{id}");
         }
 
         public async Task<IEnumerable<Employee>> GetAll()
@@ -46,9 +46,9 @@ namespace BuraksRecordShopHRM.App.Services
             return await JsonSerializer.DeserializeAsync<IEnumerable<Employee>>(response,options);
         }
 
-        public async Task<Employee> GetDetail(int employeeId)
+        public async Task<Employee> GetDetail(int id)
         {
-            var response = await _httpClient.GetStreamAsync($"api/employee/{employeeId}");
+            var response = await _httpClient.GetStreamAsync($"api/employee/{id}");
             return await JsonSerializer.DeserializeAsync<Employee>(response, options);
         }
 

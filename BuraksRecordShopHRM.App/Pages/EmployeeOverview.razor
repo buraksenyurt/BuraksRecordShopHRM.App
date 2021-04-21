@@ -26,7 +26,10 @@ else
                     <td><b>@e.LastName</b>, @e.FirstName</td>
                     <td>
                         <a href="@($"employeedetail/{e.EmployeeId}")" class="btn btn-primary table-btn">
-                            more...
+                            More
+                        </a>
+                        <a href="@($"employeeupsert/{e.EmployeeId}")" class="btn btn-primary table-btn">
+                            Edit
                         </a>
                     </td>
                 </tr>
