@@ -17,6 +17,9 @@ namespace BuraksRecordShopHRM.App.Pages
         public ICountryDataService CountryDataService { get; set; }
 
         [Inject]
+        public IJobCategoryDataService JobCategoryDataService { get; set; }
+
+        [Inject]
         public NavigationManager NavigationManager { get; set; }
 
         [Parameter]
@@ -25,14 +28,18 @@ namespace BuraksRecordShopHRM.App.Pages
         public Employee Employee { get; set; } = new Employee();
 
         public List<Country> Countries { get; set; } = new List<Country>();
+        public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
 
-        public string CountryId { get; set; }
+        public string CountryId { get; set; } = string.Empty;
+        public string JobCategoryId { get; set; } = string.Empty;
         public CurrentState CurrentState { get; set; } = new CurrentState();
 
         protected async override Task OnInitializedAsync()
         {
             CurrentState.IsSaved = false;
             Countries = (await CountryDataService.GetAll()).ToList();
+            JobCategories = (await JobCategoryDataService.GetAll()).ToList();
+            
             int.TryParse(EmployeeId, out int id);
             if(id==0)
             {
@@ -50,6 +57,7 @@ namespace BuraksRecordShopHRM.App.Pages
             }
             
             CountryId = Employee.CountryId.ToString();
+            JobCategoryId = Employee.JobCategoryId.ToString();
         }
 
         protected void OnValidSubmit()

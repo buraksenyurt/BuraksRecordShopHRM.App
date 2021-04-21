@@ -18,6 +18,15 @@
                 <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@Employee.FirstName" placeholder="Enter first name"></InputText>
             </div>
             <div class="form-group row">
+                <label for="jobCategory" class="col-sm-3">Country</label>
+                <InputSelect id="jobCategory" class="form-control col-sm-8" @bind-Value="@JobCategoryId">
+                    @foreach (var jc in JobCategories)
+                        {
+                        <option value="@jc.JobCategoryId">@jc.Name</option>
+                        }
+                </InputSelect>
+            </div>
+            <div class="form-group row">
                 <label for="birthDate" class="col-sm-3">Birthdate: </label>
                 <InputDate id="birthDate" class="form-control col-sm-8" @bind-Value="@Employee.BirthDate" placeholder="Enter birthdate"></InputDate>
             </div>
