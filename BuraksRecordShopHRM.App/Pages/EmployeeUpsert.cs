@@ -16,6 +16,9 @@ namespace BuraksRecordShopHRM.App.Pages
         [Inject]
         public ICountryDataService CountryDataService { get; set; }
 
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+
         [Parameter]
         public string EmployeeId { get; set; }
 
@@ -24,12 +27,48 @@ namespace BuraksRecordShopHRM.App.Pages
         public List<Country> Countries { get; set; } = new List<Country>();
 
         public string CountryId { get; set; }
+        public CurrentState CurrentState { get; set; } = new CurrentState();
 
         protected async override Task OnInitializedAsync()
         {
-            Employee = await EmployeeDataService.GetDetail(Convert.ToInt32(EmployeeId));
+            CurrentState.IsSaved = false;
             Countries = (await CountryDataService.GetAll()).ToList();
+            int.TryParse(EmployeeId, out int id);
+            if(id==0)
+            {
+                Employee = new Employee
+                {
+                    CountryId = 1,
+                    JobCategoryId = 1,
+                    BirthDate = DateTime.Now,
+                    JoinedDate = DateTime.Now
+                };
+            }
+            else
+            {
+                Employee = await EmployeeDataService.GetDetail(id);
+            }
+            
             CountryId = Employee.CountryId.ToString();
+        }
+
+        protected void OnValidSubmit()
+        {
+            //TODO@Burak Yazılacak
+        }
+        protected void OnInvalidSubmit()
+        {
+            //TODO@Burak Yazılacak
+        }
+
+        protected void DeleteEmployee()
+        {
+            //TODO@Burak Yazılacak
+        }
+
+        protected void NavigateToOverview()
+        {
+            NavigationManager.NavigateTo("/employeeoverview");
         }
     }
 }
