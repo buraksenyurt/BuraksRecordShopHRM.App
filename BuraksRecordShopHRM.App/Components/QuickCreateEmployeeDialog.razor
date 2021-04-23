@@ -1,34 +1,37 @@
-﻿<div class="modal fade shadow d-block" id="quickAddModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="model-title" id="titleLabel">Fast Employee Insertion</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <EditForm Model="@Employee">
-                    <DataAnnotationsValidator />
-                    <div class="form-group">
-                        <label for="firstName">First name: </label>
-                        <InputText id="firstName" class="form-control" @bind-Value="@Employee.FirstName" placeholder="My name is..."></InputText>
-                        <ValidationMessage For="@(() => Employee.FirstName)" />
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last name: </label>
-                        <InputText id="lastName" class="form-control" @bind-Value="@Employee.LastName" placeholder="My surname is..."></InputText>
-                        <ValidationMessage For="@(() => Employee.LastName)" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email: </label>
-                        <InputText id="email" class="form-control" @bind-Value="@Employee.Email" placeholder="Enter email"></InputText>
-                        <ValidationMessage For="@(() => Employee.Email)" />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <a class="btn btn-outline-primary">Close</a>
-                </EditForm>
+﻿@if (ShowDialog)
+{
+    <div class="modal fade shadow d-block" id="quickAddModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="model-title" id="titleLabel">Fast Employee Insertion</h3>
+                    <button type="button" class="close" @onclick="@Close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@Employee" OnValidSubmit="@OnHandleValidSubmit">
+                        <DataAnnotationsValidator />
+                        <div class="form-group">
+                            <label for="firstName">First name: </label>
+                            <InputText id="firstName" class="form-control" @bind-Value="@Employee.FirstName" placeholder="My name is..."></InputText>
+                            <ValidationMessage For="@(() => Employee.FirstName)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last name: </label>
+                            <InputText id="lastName" class="form-control" @bind-Value="@Employee.LastName" placeholder="My surname is..."></InputText>
+                            <ValidationMessage For="@(() => Employee.LastName)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email: </label>
+                            <InputText id="email" class="form-control" @bind-Value="@Employee.Email" placeholder="Enter email"></InputText>
+                            <ValidationMessage For="@(() => Employee.Email)" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <a class="btn btn-outline-primary" @onclick="@Close">Close</a>
+                    </EditForm>
+                </div>
             </div>
         </div>
     </div>
-</div>
+}
