@@ -5,10 +5,12 @@
 {
     <section>
         <h1 class="card-title">
-            @Employee.LastName, @Employee.FirstName
+            @Employee.LastName @Employee.FirstName 
         </h1>
 
         <EditForm Model="@Employee" OnInvalidSubmit="@OnInvalidSubmit" OnValidSubmit="@OnValidSubmit">
+            <DataAnnotationsValidator/>
+            <ValidationSummary></ValidationSummary>
             <div class="form-group row">
                 <label for="lastName" class="col-sm-3">Last Name: </label>
                 <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
@@ -64,5 +66,5 @@
 }
 else
 {
-    <div class="alert @CurrentState.Status">@CurrentState.Message</div>
+    <div class="alert @CurrentState.AlertCssClass">@CurrentState.Message</div>
 }
