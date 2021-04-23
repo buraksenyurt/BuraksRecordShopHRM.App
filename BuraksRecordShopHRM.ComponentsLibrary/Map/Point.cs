@@ -1,4 +1,4 @@
-﻿namespace BuraksRecordShopHRM.App.Components
+﻿namespace BuraksRecordShopHRM.ComponentsLibrary.Map
 {
     public class Point
     {
