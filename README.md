@@ -53,3 +53,11 @@ Bugün itibariyle eğitimin ilk dört modülünü tamamladım. Şu an itibariyle
 ![./assets/screenshot_6.png](./Assets/screenshot_6.png)
 
 ![./assets/screenshot_7.png](./Assets/screenshot_7.png)
+
+## Logs (24 Nisan 2021 - Cumartesi)
+
+5nci modülü tamamladıktan sonra BuraksRecordShopHRM.App isimli Razor Components Library'ye dönüştürülmüş projeyi kullanabilen Client ve Server Side Blazor uygulamaları ortaya çıktı. Az bir eforla ortak kütüphane üstüne oturmuş iki farklı Blazor çalışma modeli.
+
+Client modelde gerekli dll'ler istemci tarafına indirilip Web Assembly üzerinden çalışırken, Server Side modelde sunucu tarafında Asp.Net Core uygulaması yürümekte ve istemciye inen parçalar onunla SignalR kanalı üstünden haberleşmekte.
+
+![./assets/screenshot_8.png](./Assets/screenshot_8.png)
