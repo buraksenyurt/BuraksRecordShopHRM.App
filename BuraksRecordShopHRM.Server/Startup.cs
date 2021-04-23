@@ -1,14 +1,10 @@
+using BuraksRecordShopHRM.App.Services;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.Server
 {
@@ -27,6 +23,10 @@ namespace BuraksRecordShopHRM.Server
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client => client.BaseAddress = new Uri("https://localhost:44364"));
+            services.AddHttpClient<ICountryDataService, CountryDataService>(client => client.BaseAddress = new Uri("https://localhost:44364"));
+            services.AddHttpClient<IJobCategoryDataService, JobCategoryDataService>(client => client.BaseAddress = new Uri("https://localhost:44364"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
