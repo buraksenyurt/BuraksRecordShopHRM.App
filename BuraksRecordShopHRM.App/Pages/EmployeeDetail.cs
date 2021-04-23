@@ -1,7 +1,9 @@
-﻿using BuraksRecordShopHRM.App.Services;
+﻿using BuraksRecordShopHRM.App.Components;
+using BuraksRecordShopHRM.App.Services;
 using BuraksRecordShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BuraksRecordShopHRM.App.Pages
@@ -12,6 +14,8 @@ namespace BuraksRecordShopHRM.App.Pages
         public string SearchingID { get; set; }
         public Employee CurrentEmployee { get; set; } = new Employee();
 
+        public List<Marker> MapMarkers{ get; set; }
+
         [Inject]
         public IEmployeeDataService EmployeeDataService { get; set; }
 
@@ -21,6 +25,15 @@ namespace BuraksRecordShopHRM.App.Pages
         protected async override Task OnInitializedAsync()
         {
             CurrentEmployee = await EmployeeDataService.GetDetail(Convert.ToInt32(SearchingID));
+
+            MapMarkers = new List<Marker>
+            {
+                new Marker{
+                    Description = $"{CurrentEmployee.FirstName} {CurrentEmployee.LastName}"
+                    ,  ShowPopup = false
+                    , X = CurrentEmployee.Longitude
+                    , Y = CurrentEmployee.Latitude}
+            };
             //Countries = DataLoader.LoadCountries();
             //JobCategories = DataLoader.LoadJobs();
             //Employees = DataLoader.LoadEmployees();
