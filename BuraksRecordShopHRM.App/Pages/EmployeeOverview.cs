@@ -1,4 +1,5 @@
-﻿using BuraksRecordShopHRM.App.Services;
+﻿using BuraksRecordShopHRM.App.Components;
+using BuraksRecordShopHRM.App.Services;
 using BuraksRecordShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace BuraksRecordShopHRM.App.Pages
         */
         [Inject]
         public IEmployeeDataService EmployeeDataService {get;set;}
+
+        public QuickCreateEmployeeDialog QuickCreateEmployeeDialog { get; set; }
         //public IEnumerable<Country> Countries { get; set; }
         //public IEnumerable<JobCategory> JobCategories { get; set; }
 
@@ -30,6 +33,11 @@ namespace BuraksRecordShopHRM.App.Pages
             //Employees = DataLoader.LoadEmployees();
 
             //return base.OnInitializedAsync();
+        }
+
+        public void QuickCreate()
+        {
+            QuickCreateEmployeeDialog.Show();
         }
     }
 }

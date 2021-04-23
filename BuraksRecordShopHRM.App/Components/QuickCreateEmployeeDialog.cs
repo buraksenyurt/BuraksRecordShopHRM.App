@@ -10,7 +10,7 @@ namespace BuraksRecordShopHRM.App.Components
     {
         public Employee Employee { get; set; } = new Employee { JobCategoryId = 1, CountryId = 1, BirthDate = DateTime.Now.AddYears(-20), JoinedDate = DateTime.Now };
         [Inject]
-        public EmployeeDataService EmployeeDataService{ get; set; }
+        public IEmployeeDataService EmployeeDataService{ get; set; }
         public bool ShowDialog { get; set; }
 
         public void Show()
