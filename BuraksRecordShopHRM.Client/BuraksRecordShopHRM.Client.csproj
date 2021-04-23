@@ -12,4 +12,9 @@
     <PackageReference Include="System.Net.Http.Json" Version="3.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BuraksRecordShopHRM.App\BuraksRecordShopHRM.App.csproj" />
+    <ProjectReference Include="..\BuraksRecordShopHRM.ComponentsLibrary\BuraksRecordShopHRM.ComponentsLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
