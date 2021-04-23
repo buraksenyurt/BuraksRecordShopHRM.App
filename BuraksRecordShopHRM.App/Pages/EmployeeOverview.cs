@@ -39,5 +39,17 @@ namespace BuraksRecordShopHRM.App.Pages
         {
             QuickCreateEmployeeDialog.Show();
         }
+
+        /*
+            Modal dialog ile bir çalışan eklendiğinde, QuickCreateEmployeeDialog bileşeninin OnHandleValidSubmit metodu içerisindeki 
+            DialogCloseCallback.InvokeAsync(true) fonksiyonu tetiklenir. Bu tetikleme de sayfadaki QuickCreateEmployeeDialog bileşeninin 
+            DialogCloseCallback eventi gerçekleştiğinden çalışan aşağıdaki metodu tetikler. 
+            Dolayısıyla Modal Dialog bileşeni ile kullanıldığı bileşen arasında Event Based bir iletişim sağlanmış olur.
+        */
+        public async void DialogCloseCallback_Triggered()
+        {
+            Employees = (await EmployeeDataService.GetAll()).ToList();
+            StateHasChanged();
+        }
     }
 }

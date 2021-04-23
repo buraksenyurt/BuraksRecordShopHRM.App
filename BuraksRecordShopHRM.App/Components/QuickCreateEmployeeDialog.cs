@@ -13,6 +13,11 @@ namespace BuraksRecordShopHRM.App.Components
         public IEmployeeDataService EmployeeDataService{ get; set; }
         public bool ShowDialog { get; set; }
 
+        // Veri eklendiğinde haberdar etmemiz gereken bir bileşen varsa kullanabilecekleri event
+        // EmployeeOverview'daki hızlı ekleme butonunda bu olay için bir metod tanımı yer alıyor
+        [Parameter]
+        public EventCallback<bool> DialogCloseCallback { get; set; } 
+
         public void Show()
         {
             Employee = new Employee { JobCategoryId = 1, CountryId = 1, BirthDate = DateTime.Now.AddYears(-20), JoinedDate = DateTime.Now };
@@ -30,6 +35,11 @@ namespace BuraksRecordShopHRM.App.Components
         {
             await EmployeeDataService.Create(Employee);
             ShowDialog = false;
+
+            // CloseEventCallback olayına abone olan bileşenin kendisindeki olay metodunu çağırıyoruz
+            // EmployeeOverview sınıfında DialogCloseCallback olayı için tetiklenen DialogCloseCallback_Triggered fonksiyonuna bakın
+            await DialogCloseCallback.InvokeAsync(true); 
+            StateHasChanged();
         }
     }
 }
