@@ -7,10 +7,10 @@ namespace BuraksRecordShopHRM.Shared
     {
         public int EmployeeId { get; set; }
         [Required]
-        [StringLength(50,ErrorMessage = "But the long name!")]
+        [StringLength(25,ErrorMessage = "I think you have a very long name. No more than 25 characters.")]
         public string FirstName { get; set; }
         [Required]
-        [StringLength(50, ErrorMessage = "But the long surname!")]
+        [StringLength(25, ErrorMessage = "Your last name seems too long. I can allow up to 25 characters.")]
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
         [Required]

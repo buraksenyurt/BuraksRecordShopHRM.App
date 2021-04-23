@@ -4,20 +4,22 @@
 @if (!CurrentState.IsSaved)
 {
     <section>
-        <h1 class="card-title">
-            @Employee.LastName @Employee.FirstName 
-        </h1>
+        <h3 class="card-title">
+            @Employee.LastName @Employee.FirstName
+        </h3>
 
         <EditForm Model="@Employee" OnInvalidSubmit="@OnInvalidSubmit" OnValidSubmit="@OnValidSubmit">
-            <DataAnnotationsValidator/>
-            <ValidationSummary></ValidationSummary>
+            <DataAnnotationsValidator />
+            @*<ValidationSummary></ValidationSummary>*@
             <div class="form-group row">
                 <label for="lastName" class="col-sm-3">Last Name: </label>
                 <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@Employee.LastName" placeholder="Enter last name"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(()=>Employee.LastName)" />
             </div>
             <div class="form-group row">
                 <label for="firstName" class="col-sm-3">First Name: </label>
                 <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@Employee.FirstName" placeholder="Enter first name"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(()=>Employee.FirstName)" />
             </div>
             <div class="form-group row">
                 <label for="jobCategory" class="col-sm-3">Country</label>
@@ -35,6 +37,7 @@
             <div class="form-group row">
                 <label for="email" class="col-sm-3">Email: </label>
                 <InputText id="email" class="form-control col-sm-8" @bind-Value="@Employee.Email" placeholder="Enter email"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(()=>Employee.Email)" />
             </div>
             <div class="form-group row">
                 <label for="joineddate" class="col-sm-3">Joined on. Hurayy!!! :) </label>
