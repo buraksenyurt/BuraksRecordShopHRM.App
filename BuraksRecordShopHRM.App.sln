@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuraksRecordShopHRM.Api", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuraksRecordShopHRM.ComponentsLibrary", "BuraksRecordShopHRM.ComponentsLibrary\BuraksRecordShopHRM.ComponentsLibrary.csproj", "{FC33FD40-6661-4084-BC7E-A6ACD10E488C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuraksRecordShopHRM.Server", "BuraksRecordShopHRM.Server\BuraksRecordShopHRM.Server.csproj", "{4710FA16-0B24-457E-A632-AD09A249EC1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FC33FD40-6661-4084-BC7E-A6ACD10E488C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC33FD40-6661-4084-BC7E-A6ACD10E488C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC33FD40-6661-4084-BC7E-A6ACD10E488C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4710FA16-0B24-457E-A632-AD09A249EC1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4710FA16-0B24-457E-A632-AD09A249EC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4710FA16-0B24-457E-A632-AD09A249EC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4710FA16-0B24-457E-A632-AD09A249EC1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

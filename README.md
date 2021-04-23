@@ -4,6 +4,8 @@ Pluralsight'tan aldığım _[Blazor:Getting Started](https://app.pluralsight.com
 
 Örnek uygulama Burağın dünya çapında ün yapmış plak dükkanlarının insan kaynakları yönetimi için kullanılıyor :) Kurstaki CSS giydirme gibi tasarım konularını atladım. Uygulama ortak bir kütüphane dışında data için birde Web API kullanıyor.
 
+Kursun 5nci modülüne kadar Client Side çalışan bir Blazor uygulamasının geliştirilmesi söz konusu. Veriye erişim için API kullanılması sonraki aşamadaki işleri kolaylaştırıyor. Nitekim App isimli ana uygulama minimum eforla bir Razor Library'ye dönüştürülüp hem Server Side hem de Client Side çalışan iki ayrı Blazor uygulamasında ortaklaşa kullanılıyor. Tek kod parçası ile hem Client Side hem Serve Side çalışan Blazor app desteğinin nasıl yapılacağını öğrenmiş oluyoruz.
+
 ## Platform
 
 - Windows 10
