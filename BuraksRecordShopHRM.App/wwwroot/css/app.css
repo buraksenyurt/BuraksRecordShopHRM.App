@@ -8,6 +8,12 @@ a, .btn-link {
     color: #0366d6;
 }
 
+.track-order-map {
+    width: 350px;
+    height: 500px;
+    flex-shrink: 0;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;

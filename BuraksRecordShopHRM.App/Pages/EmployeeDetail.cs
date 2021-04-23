@@ -1,4 +1,4 @@
-﻿using BuraksRecordShopHRM.App.Components;
+﻿using BuraksRecordShopHRM.ComponentsLibrary.Map;
 using BuraksRecordShopHRM.App.Services;
 using BuraksRecordShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
@@ -14,7 +14,7 @@ namespace BuraksRecordShopHRM.App.Pages
         public string SearchingID { get; set; }
         public Employee CurrentEmployee { get; set; } = new Employee();
 
-        public List<Marker> MapMarkers{ get; set; }
+        public List<Marker> MapMarkers { get; set; } = new List<Marker>();
 
         [Inject]
         public IEmployeeDataService EmployeeDataService { get; set; }
@@ -32,7 +32,8 @@ namespace BuraksRecordShopHRM.App.Pages
                     Description = $"{CurrentEmployee.FirstName} {CurrentEmployee.LastName}"
                     ,  ShowPopup = false
                     , X = CurrentEmployee.Longitude
-                    , Y = CurrentEmployee.Latitude}
+                    , Y = CurrentEmployee.Latitude
+                }
             };
             //Countries = DataLoader.LoadCountries();
             //JobCategories = DataLoader.LoadJobs();
